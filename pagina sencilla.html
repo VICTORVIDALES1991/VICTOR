@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensaje Sencillo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 20%;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        h1 {
+            color: #0078d4;
+        }
+    </style>
+</head>
+<body>
+    <h1>¡Bienvenido a mi página web!</h1>
+    <p>Esto es un mensaje sencillo en una página minimalista.</p>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 10%;
+            background-color: #fff5e1;
+            color: #333;
+        }
+        .calculadora {
+            display: inline-block;
+            padding: 20px;
+            border: 2px solid #ff9800;
+            border-radius: 10px;
+            background-color: #ffffff;
+        }
+        input[type="text"] {
+            width: 200px;
+            height: 30px;
+            margin-bottom: 10px;
+            text-align: right;
+            font-size: 18px;
+        }
+        button {
+            width: 50px;
+            height: 40px;
+            margin: 5px;
+            font-size: 18px;
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e68a00;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <div class="calculadora">
+        <input type="text" id="resultado" readonly>
+        <br>
+        <button onclick="agregarValor('1')">1</button>
+        <button onclick="agregarValor('2')">2</button>
+        <button onclick="agregarValor('3')">3</button>
+        <button onclick="agregarValor('+')">+</button>
+        <br>
+        <button onclick="agregarValor('4')">4</button>
+        <button onclick="agregarValor('5')">5</button>
+        <button onclick="agregarValor('6')">6</button>
+        <button onclick="agregarValor('-')">-</button>
+        <br>
+        <button onclick="agregarValor('7')">7</button>
+        <button onclick="agregarValor('8')">8</button>
+        <button onclick="agregarValor('9')">9</button>
+        <button onclick="agregarValor('*')">*</button>
+        <br>
+        <button onclick="limpiar()">C</button>
+        <button onclick="agregarValor('0')">0</button>
+        <button onclick="calcular()">=</button>
+        <button onclick="agregarValor('/')">/</button>
+    </div>
+    <script>
+        function agregarValor(valor) {
+            document.getElementById("resultado").value += valor;
+        }
+
+        function limpiar() {
+            document.getElementById("resultado").value = "";
+        }
+
+        function calcular() {
+            try {
+                document.getElementById("resultado").value = eval(document.getElementById("resultado").value);
+            } catch {
+                document.getElementById("resultado").value = "Error";
+            }
+        }
+    </script>
+</body>
+</html>
